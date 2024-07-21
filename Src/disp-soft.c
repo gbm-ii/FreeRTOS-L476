@@ -61,11 +61,11 @@ void disp_init(void)
 	LEDMpx_TIM->DIER = TIM_DIER_CC1IE | TIM_DIER_UIE;
 	// interrupts and sleep control
 	NVIC_EnableIRQ(LEDMpx_IRQn);
+	blank_digit(0);
+	blank_digit(1);
+	blank_digit(2);
+	blank_digit(3);
 	LEDMpx_TIM->CR1 = TIM_CR1_CEN;
-//	set_digit(0, 1);
-//	set_digit(1, 3);
-//	set_digit(2, 5);
-//	set_digit(3, 7);
 }
 
 void LEDMpx_IRQHandler(void)
